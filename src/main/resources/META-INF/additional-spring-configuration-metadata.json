@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "openweather.api.singleCityBaseRequest",
+      "type": "java.lang.String",
+      "description": "Basic request String to call openWeatherMap API to retrieve information about a single city."
+    }
+  ]
+}
