@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("weatherInformationService")
@@ -113,5 +114,14 @@ public class WeatherInformationInformationServiceImpl implements WeatherInformat
 		}
 	}
 	
-	
+	@Override
+	public List<WeatherInformation> findAll()
+	{
+		logger.info("Finding all weather information recorded");
+		
+		List<WeatherInformation> info = new ArrayList<>();
+		weatherInformationRepository.findAll().forEach(info::add);
+		
+		return info;
+	}
 }

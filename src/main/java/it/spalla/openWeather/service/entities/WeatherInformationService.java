@@ -36,6 +36,13 @@ public interface WeatherInformationService
 	
 	//###########READ
 	
+	/**
+	 * Find all weather information registered
+	 *
+	 * @return The list of all entities
+	 */
+	List<WeatherInformation> findAll();
+	
 	//###########UPDATE
 	
 	//###########DELETE
