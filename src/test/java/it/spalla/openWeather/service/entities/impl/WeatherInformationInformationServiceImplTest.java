@@ -95,4 +95,33 @@ class WeatherInformationInformationServiceImplTest
 		//Test
 		assertTrue(weatherInformationInformationService.createTemperatureInformationForCity(pavia));
 	}
+	
+	@Test
+	void findAll()
+	{
+		//Mock data creation
+		Random rand = new Random();
+		City city = City.builder().name("Pavia").id(rand.nextLong()).build();
+		WeatherInformation info1 = WeatherInformation.builder().id(rand.nextLong()).type("Temperature").city(city)
+				.value(rand.nextDouble()).build();
+		WeatherInformation info2 = WeatherInformation.builder().id(rand.nextLong()).type("Temperature").city(city)
+				.value(rand.nextDouble()).build();
+		WeatherInformation info3 = WeatherInformation.builder().id(rand.nextLong()).type("Temperature").city(city)
+				.value(rand.nextDouble()).build();
+		
+		List<WeatherInformation> infoList = new ArrayList<>();
+		infoList.add(info1);
+		infoList.add(info2);
+		infoList.add(info3);
+		
+		//Behaviour definition
+		when(weatherInformationRepository.findAll()).thenReturn(infoList);
+		
+		//Test
+		List<WeatherInformation> weatherInfoList = weatherInformationInformationService.findAll();
+		assertEquals(3, weatherInfoList.size());
+		assertTrue(weatherInfoList.contains(info1));
+		assertTrue(weatherInfoList.contains(info2));
+		assertTrue(weatherInfoList.contains(info3));
+	}
 }
