@@ -50,3 +50,10 @@ ALTER TABLE public.weather_information
 
 COMMENT ON TABLE public.weather_information
     IS 'Holds weather information related to cities';
+
+insert into cities (name)
+values ('Pavia'),
+       ('Tortona'),
+       ('Milano'),
+       ('Napoli'),
+       ('Roma');
