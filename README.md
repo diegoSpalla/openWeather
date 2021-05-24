@@ -4,7 +4,7 @@ Spring boot based application based on PostgreSQL Database:
 - Detects available cities in DB table
 - Starts to collect automatically information regarding temperature in these cities from OpenWeatherMapAPI
 
-The application use PostgreSQL as a Database, which code is available in the "src/main/resources" directory (postgresCode.sql)
+The application use PostgreSQL as a Database (with default settings), which code is available in the "src/main/resources" directory (postgresCode.sql)
 
 The result could be visualized through a simple table in a web browser by reaching localhost address at port 8080 (tomcat default).
 
